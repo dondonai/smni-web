@@ -1,9 +1,10 @@
 .site-header {
     background-color: #ccc;
     padding: 40px 0;
-    .wrapper {
-        display: flex;
-    }
+    text-align: center;
+    // .wrapper {
+    //     display: flex;
+    // }
     .logo {
         width: auto;
         height: 100px;
@@ -20,4 +21,11 @@
             margin-right: 0;
         }
     }
+}
+
+.site-title {
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 26px;
+    margin: 10px 0;
 }
