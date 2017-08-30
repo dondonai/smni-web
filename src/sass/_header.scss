@@ -1,0 +1,23 @@
+.site-header {
+    background-color: #ccc;
+    padding: 40px 0;
+    .wrapper {
+        display: flex;
+    }
+    .logo {
+        width: auto;
+        height: 100px;
+    }
+    nav {
+        margin: 0 auto;
+        max-width: 960px;
+    }
+    .nav-item {
+        display: inline-block;
+        margin-right: 5px;
+        padding: 5px 10px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
