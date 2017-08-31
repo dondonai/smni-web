@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import Streaming from './Streaming';
+import Extra from './Extra';
+import Banner from './Banner';
 
 class Content extends Component {
   render() {
@@ -9,11 +11,10 @@ class Content extends Component {
         <div className="wrapper">
           <div className="showcase">
             <Streaming />
-            <div className="showcase__item extra">
-            </div>
+            <Extra />
             <div className="group"></div>
           </div>
-          <div className="banner">This is a place you put the banner.</div>
+          <Banner />
         </div>
       </main>
     )
