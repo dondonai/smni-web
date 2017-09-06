@@ -1,81 +1,59 @@
 import React, { Component } from 'react';
 import graph from 'fb-react-sdk';
-import $ from 'jquery';
-import { FlexVideo } from 'react-foundation';
+import ReactHtmlParser from 'react-html-parser';
+import { FlexVideo, Button, Colors } from 'react-foundation';
 
 
 class Extra extends Component {
   constructor(props) {
     super(props);
-    
-    let stateMe = "The state";
-    this.state = { date: stateMe };
+    this.state = {
+      embed: null
+    }
   }
+  
+  componentDidMount() {
 
-  // componentDidMount() {
-  //   this.fbFetch().then(response => {
-  //     this.setState({
-  //       date: response.videos.data
-  //     });
-  //   });
-  // }
 
-  fbFetch() {
-    const access_token = '1696571707319370|dSmXHRVAKW7CD_RDP4EX22I_JIs';
-    // var fbEmbed, embedHtml;
+    let params = {"fields":"videos.limit(10){live_status,status,embed_html}"}
 
-    graph.setAccessToken(access_token);
+    let userId = '105414913766';
 
-    var options = {
-      timeout: 3000,
-      pool: { maxSockets: Infinity },
-      headers: { connection: "keep-alive" }
-    };
+    let accessToken = '1696571707319370|dSmXHRVAKW7CD_RDP4EX22I_JIs';
 
-    graph
-      .setOptions(options)
-      .get("105414913766/?fields=username,videos.limit(10){live_status,status,embed_html,length}", (err, res) => {
-        console.log(res);
-        let videos = res.videos.data;
-        // var video;
-        $.each(videos, function(i, video) {
-            // console.log(video.live_status);
-            // Let's get the length of the video in minutes
-            // videoLength = video.length;
-            // lengthInHour = videoLength / 3600;
-            // lengthInMin = lengthInHour * 60;
+    graph.setAccessToken(accessToken);
+    graph.setVersion("2.10");
 
-            // if (video.live_status === "LIVE" ||
-            //     video.live_status === "VOD" &&
-            //     lengthInMin > 30 &&
-            //     video.status.video_status === "ready") {
+    // return fetch('https://www.reddit.com/r/reactjs.json')
+    return fetch('https://graph.facebook.com/105414913766?fields=username,videos.limit(10){live_status,status,embed_html,length}&access_token=1696571707319370|dSmXHRVAKW7CD_RDP4EX22I_JIs')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        // let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+        console.log(responseJson);
+        let videos = responseJson.videos.data;
+        let newEmbed;
 
-            //     // Let's assign the returned embed code from Facebook to our var embedHtml
-            //     embedHtml = video.embed_html;
-            //     console.log(embedHtml);
-            //     return false;
+        this.setState({
+          embed: responseJson.videos.data[1].embed_html
 
-            // }
-            if (video.live_status === "LIVE" ||
-              video.live_status === "VOD") {
-                if (video.status.video_status === "ready") {
-                  // embedHtml = video.embed_html;
-                  return false;
-                }
-              }
-            });
-            
-            // fbEmbed = video;
-            // console.log(fbEmbed);
-          });
-          
+        }, function() {
+          // do something with new state
+          console.log(this.state.embed);
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   render() {
     return (
-      <FlexVideo isWidescreen>
-        <iframe title="fb_embed" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FApolloQuiboloy%2Fvideos%2F10155655408068767%2F&width=1280" width="1280" height="720" scrolling="no" frameBorder="0" allowTransparency="true" allowFullScreen="true"></iframe>
-      </FlexVideo>
+      <div>
+        <FlexVideo isWidescreen>
+          { ReactHtmlParser(this.state.embed) }
+        </FlexVideo>
+        {/* <Button color={Colors.SUCCESS} onClick={() => this.callApi()}>Save</Button> */}
+      </div>
     );
   }
 }
