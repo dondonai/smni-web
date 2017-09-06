@@ -1,23 +1,32 @@
-import React, { Component } from 'react';
-
-import Streaming from './Streaming';
+import React, { Component } from "react";
+import { Row, Column } from "react-foundation";
+import Streaming from "./Streaming";
 import Extra from './Extra';
-import Banner from './Banner';
+import Playlist from "./Playlist";
+import Banner from "./Banner";
 
 class Content extends Component {
   render() {
     return (
       <main className="content">
-        <div className="wrapper">
-          <div className="showcase">
+        <Row className="display" uncollapseOnLarge>
+          <Column small={12} large={6}>
             <Streaming />
+          </Column>
+          <Column small={12} large={6}>
+            {/* <Thumbnail src="//unsplash.it/g/570/426/?blur" alt="" /> */}
             <Extra />
-            <div className="group"></div>
-          </div>
-          <Banner />
-        </div>
+          </Column>
+        </Row>
+        <hr />
+        <Banner />
+        <hr />
+        <Playlist />
+        <hr />
+        <Banner />
+        <hr />
       </main>
-    )
+    );
   }
 }
 
