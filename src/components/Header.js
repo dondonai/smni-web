@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../images/logo.jpg';
+import { Row, Column } from 'react-foundation';
 
 // import Navigation from './Navigation';
 
@@ -9,11 +10,13 @@ class Header extends Component {
 
         return (
         <header className="site-header">
-          <div className="wrapper">
+          <Row>
+          <Column small={12}>
             <img className="logo" src={logo} alt="SMNI" />
             <h1 className="site-title">{title}</h1>
             {/* <Navigation /> */}
-          </div>
+          </Column>
+          </Row>
         </header>
         );
     }
