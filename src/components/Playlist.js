@@ -10,7 +10,7 @@ import asow from '../images/asow.jpg';
 import excerpts from '../images/excerpts.jpg';
 import anewme from '../images/anewme.png';
 
-class Playlist extends Component {
+export default class Playlist extends Component {
   render() {
     return (
       <div className="playlist">
@@ -47,5 +47,3 @@ class Playlist extends Component {
     );
   }
 }
-
-export default Playlist;

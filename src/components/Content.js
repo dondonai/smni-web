@@ -5,7 +5,7 @@ import Extra from './Extra';
 import Playlist from "./Playlist";
 import Banner from "./Banner";
 
-class Content extends Component {
+export default class Content extends Component {
   render() {
     return (
       <main className="content">
@@ -14,7 +14,6 @@ class Content extends Component {
             <Streaming />
           </Column>
           <Column small={12} large={6}>
-            {/* <Thumbnail src="//unsplash.it/g/570/426/?blur" alt="" /> */}
             <Extra />
           </Column>
         </Row>
@@ -29,5 +28,3 @@ class Content extends Component {
     );
   }
 }
-
-export default Content;

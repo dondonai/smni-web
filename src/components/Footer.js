@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Row, Column } from "react-foundation";
 
-class Footer extends Component {
+export default class Footer extends Component {
   render() {
     return (
       <footer className="site-footer">
@@ -14,5 +14,3 @@ class Footer extends Component {
     );
   }
 }
-
-export default Footer;

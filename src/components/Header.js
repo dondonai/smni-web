@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from '../images/logo.jpg';
+import logo from '../images/logo.png';
 import { Row, Column } from 'react-foundation';
 
 // import Navigation from './Navigation';
 
-class Header extends Component {
+export default class Header extends Component {
     render() {
         const title = "Sonshine Media Network International";
 
@@ -21,5 +21,3 @@ class Header extends Component {
         );
     }
 }
-
-export default Header;

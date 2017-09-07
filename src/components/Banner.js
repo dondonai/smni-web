@@ -3,7 +3,7 @@ import { Row, Column } from "react-foundation";
 import AD from 'react-google-publisher-tag';
 import AdSense from 'react-adsense';
 
-class Banner extends Component {
+export default class Banner extends Component {
   render() {
     return (
       <div className="banner">
@@ -23,5 +23,3 @@ class Banner extends Component {
     );
   }
 }
-
-export default Banner;
