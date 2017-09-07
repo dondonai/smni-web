@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Row, Column, Thumbnail } from "react-foundation";
+import { Row, Column } from "react-foundation";
+import AD from 'react-google-publisher-tag';
+import AdSense from 'react-adsense';
 
 class Banner extends Component {
   render() {
@@ -7,7 +9,11 @@ class Banner extends Component {
       <div className="banner">
         <Row className="display text-center">
           <Column large={8} centerOnLarge>
-            <Thumbnail src="//unsplash.it/728/90/?blur" alt="" />
+            <AD path="/309972075/SMNI_Web01" />
+            <AdSense.Google client='ca-pub-1938185823940866'
+              slot='2172288542'
+              style={{display: 'block'}}
+              format='auto' />
           </Column>
           <Column small={12}>
             <h4>Advertiser</h4>

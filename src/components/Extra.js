@@ -61,7 +61,6 @@ class Extra extends Component {
         <FlexVideo isWidescreen>
           { ReactHtmlParser(this.state.embed) }
         </FlexVideo>
-        {/* <Button color={Colors.SUCCESS} onClick={() => this.callApi()}>Save</Button> */}
       </div>
     );
   }

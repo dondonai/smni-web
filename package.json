@@ -3,15 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "fb-react-sdk": "^1.0.4",
-    "fbgraph": "^1.4.1",
     "font-awesome": "^4.7.0",
     "foundation-sites": "^6.4.3",
-    "jquery": "^3.2.1",
     "normalize.css": "^7.0.0",
     "react": "^15.6.1",
+    "react-adsense": "0.0.3",
     "react-dom": "^15.6.1",
     "react-foundation": "^0.9.1",
+    "react-html-parser": "^2.0.0",
     "react-scripts": "1.0.12",
     "reset.css": "^2.0.2"
   },
