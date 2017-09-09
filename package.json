@@ -1,29 +1,29 @@
 {
-  "name": "smni",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "font-awesome": "^4.7.0",
-    "foundation-sites": "^6.4.3",
-    "normalize.css": "^7.0.0",
-    "react": "^15.6.1",
-    "react-adsense": "0.0.3",
-    "react-dom": "^15.6.1",
-    "react-foundation": "^0.9.1",
-    "react-helmet": "^5.2.0",
-    "react-html-parser": "^2.0.0",
-    "react-scripts": "1.0.12",
-    "reset.css": "^2.0.2"
-  },
-  "homepage": "http://smni.com/awesome/",
-  "scripts": {
-    "start": "react-scripts-with-sass start",
-    "build": "react-scripts-with-sass build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "devDependencies": {
-    "create-react-app-sass": "^1.1.0",
-    "stylelint-config-standard": "^17.0.0"
-  }
+    "name": "smni",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "font-awesome": "^4.7.0",
+        "foundation-sites": "^6.4.3",
+        "normalize.css": "^7.0.0",
+        "react": "^15.6.1",
+        "react-adsense": "0.0.3",
+        "react-dom": "^15.6.1",
+        "react-foundation": "^0.9.1",
+        "react-ga": "^2.2.0",
+        "react-helmet": "^5.2.0",
+        "react-html-parser": "^2.0.0",
+        "react-scripts": "1.0.12",
+        "reset.css": "^2.0.2"
+    },
+    "scripts": {
+        "start": "react-scripts-with-sass start",
+        "build": "react-scripts-with-sass build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject"
+    },
+    "devDependencies": {
+        "create-react-app-sass": "^1.1.0",
+        "stylelint-config-standard": "^17.0.0"
+    }
 }

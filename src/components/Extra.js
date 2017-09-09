@@ -28,19 +28,35 @@ export default class Extra extends Component {
       .then((response) => response.json())
       .then((responseJson) => {
         let videos = responseJson.videos.data;
+        let vodCollected = [];
         // console.log(videos);
+        videos.forEach( (video) => {
+          // console.log(video);
+          if (video.live_status === "VOD") {
+            // Let's collect the videos from Live
+              vodCollected.push(video.embed_html);
+            }
+        });
+        // console.log(vodCollected);
 
         if (videos[0].live_status === undefined) {
-          console.log(videos[0].live_status);
-          if (videos[1].live_status === "VOD") {
-            console.log(videos[1].live_status);
-            this.setState({
-              embed: videos[1].embed_html
-            }, function() {
-              // do something with new state
-              // console.log(this.state.embed);
-            });
-          }
+          // console.log(videos[0].live_status);
+          this.setState({
+              embed: vodCollected[0]
+          }, () => {
+              // What to do with the new state
+            //   console.log(this.state.embed);
+          });
+
+        //   if (videos[1].live_status === "VOD") {
+        //     // console.log(videos[1].live_status);
+        //     this.setState({
+        //       embed: videos[1].embed_html
+        //     }, function() {
+        //       // do something with new state
+        //       // console.log(this.state.embed);
+        //     });
+        //   }
         } else {
           this.setState({
             embed: videos[0].embed_html
