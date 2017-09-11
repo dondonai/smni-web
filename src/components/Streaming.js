@@ -21,7 +21,7 @@ export default class Streaming extends Component {
           <meta itemprop="image" content={logo} />
         </Helmet>
         <FlexVideo isWidescreen>
-          <iframe width="560" height="315" id="ls_embed_1504014704" title="SMNI Streaming" src="https://livestream.com/accounts/19079954/events/7685105/player?width=960&height=540&enableInfoAndActivity=false&defaultDrawer=&autoPlay=true&mute=false" allowFullScreen></iframe>
+          <iframe width="560" height="315" id="ls_embed_1505004217" title="SMNI Streaming" src="https://livestream.com/accounts/19079954/events/7710670/player?width=960&height=540&enableInfoAndActivity=false&defaultDrawer=&autoPlay=true&mute=false" allowFullScreen></iframe>
         </FlexVideo>
       </div>
     );
