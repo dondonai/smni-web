@@ -11,20 +11,20 @@ export default class Extra extends Component {
       embed: null
     }
   }
-  
+
   componentDidMount() {
 
     const userId = '105414913766';
     const accessToken = '1696571707319370|dSmXHRVAKW7CD_RDP4EX22I_JIs';
 
-    // graph.setAccessToken(accessToken);
-    // graph.setVersion("2.10");
-
     // return fetch('https://www.reddit.com/r/reactjs.json')
-    return fetch('https://graph.facebook.com/' + 
-        userId + 
-        '/?fields=username,videos.limit(10){live_status,status,embed_html,length}&access_token=' + 
-        accessToken)
+    return fetch('https://graph.facebook.com/' +
+        userId +
+        '/?fields=username,videos.limit(10){live_status' +
+        'status,' +
+        'embed_html,' +
+        'length}' +
+        '&access_token=' + accessToken)
       .then((response) => response.json())
       .then((responseJson) => {
         let videos = responseJson.videos.data;
@@ -48,7 +48,7 @@ export default class Extra extends Component {
             //   console.log(this.state.embed);
           });
 
-        //   if (videos[1].live_status === "VOD") {
+          // if (videos[1].live_status === "VOD") {
         //     // console.log(videos[1].live_status);
         //     this.setState({
         //       embed: videos[1].embed_html
