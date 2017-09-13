@@ -17,7 +17,6 @@ export default class Extra extends Component {
     const userId = '105414913766';
     const accessToken = '1696571707319370|dSmXHRVAKW7CD_RDP4EX22I_JIs';
 
-    // return fetch('https://www.reddit.com/r/reactjs.json')
     return fetch('https://graph.facebook.com/' +
         userId +
         '/?fields=username,videos.limit(10){live_status' +
