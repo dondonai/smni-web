@@ -19,7 +19,7 @@ export default class Extra extends Component {
 
     return fetch('https://graph.facebook.com/' +
         userId +
-        '/?fields=username,videos.limit(10){live_status' +
+        '/?fields=username,videos.limit(10){live_status,' +
         'status,' +
         'embed_html,' +
         'length}' +
@@ -28,12 +28,13 @@ export default class Extra extends Component {
       .then((responseJson) => {
         let videos = responseJson.videos.data;
         let vodCollected = [];
-        // console.log(videos);
+        // console.log(responseJson);
         videos.forEach( (video) => {
           // console.log(video);
           if (video.live_status === "VOD") {
             // Let's collect the videos from Live
               vodCollected.push(video.embed_html);
+              // console.log(video.embed_html);
             }
         });
         // console.log(vodCollected);
@@ -46,20 +47,10 @@ export default class Extra extends Component {
               // What to do with the new state
             //   console.log(this.state.embed);
           });
-
-          // if (videos[1].live_status === "VOD") {
-        //     // console.log(videos[1].live_status);
-        //     this.setState({
-        //       embed: videos[1].embed_html
-        //     }, function() {
-        //       // do something with new state
-        //       // console.log(this.state.embed);
-        //     });
-        //   }
         } else {
           this.setState({
             embed: videos[0].embed_html
-          }, function() {
+          }, () => {
             // do something with new state
             // console.log(this.state.embed);
           });
@@ -76,6 +67,7 @@ export default class Extra extends Component {
     return (
       <div>
         <FlexVideo isWidescreen>
+          {/* <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FApolloQuiboloy%2Fvideos%2F10155682732083767%2F&width=640" width="640" height="360" frameborder="0" allowTransparency="true" allowFullScreen="true" title="FB Live"></iframe> */}
           { ReactHtmlParser(this.state.embed) }
         </FlexVideo>
       </div>
